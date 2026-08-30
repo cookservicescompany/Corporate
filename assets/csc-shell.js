@@ -1,6 +1,6 @@
 /*
   CSC Corporate Shared Shell
-  Last Updated: 23 May 2026 @ 19:08:09Z UTC
+  Last Updated: 30 August 2026 @ 20:16:42Z UTC
   Copyright © 2026 Cook Services Company, LLC | All Rights Reserved.
 */
 (function () {
@@ -77,8 +77,7 @@
             <div class="csc-footer-links" aria-label="Footer links">
               <a href="/investors/">CSC Investments</a>
               <a href="https://www.livingwordbibles.com" target="_blank" rel="noopener">Living Word Bibles</a>
-              <a href="https://www.quickhire.agency" target="_blank" rel="noopener">QuickHire™</a>
-              <a href="https://www.cgnnews.net" target="_blank" rel="noopener">CGN News</a>
+              <a href="https://www.cook-international.com/eeo/">Equal Employment Opportunity</a>
               <a href="/terms/">Terms of Service</a>
               <a href="/privacy/">Privacy Policy</a>
               <a href="/#contact">Contact</a>
