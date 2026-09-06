@@ -1,6 +1,6 @@
 /*
   CSC Corporate Shared Styles
-  Last Updated: 23 May 2026 @ 19:08:09Z UTC
+  Last Updated: 6 September 2026 @ 14:58:00Z UTC
   Copyright © 2026 Cook Services Company, LLC | All Rights Reserved.
 */
 :root {
@@ -594,6 +594,10 @@ img {
   border-top: 1px solid rgba(255, 255, 255, 0.12);
   color: rgba(255, 255, 255, 0.58);
   font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
 }
 
 .csc-footer-copyright-link {
