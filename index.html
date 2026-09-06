@@ -49,19 +49,6 @@
       color: #fff4f4;
     }
 
-    /* Match the CSC homepage copyright row: copyright left, Last Updated right. */
-    #csc-site-footer .copyright {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-    #csc-site-footer .copyright .csc-last-updated {
-      margin-left: auto;
-      text-align: right;
-      white-space: nowrap;
-    }
     @media (max-width: 760px) {
       .csc-acquisition-notice { font-size: 12px; padding: 7px 12px; }
     }
@@ -357,36 +344,5 @@
     }
   </script>
   <script src="/assets/csc-shell.js"></script>
-  <script>
-    (function () {
-      const footerHost = document.getElementById('csc-site-footer');
-      if (!footerHost) return;
-
-      function placeLastUpdated() {
-        const row = footerHost.querySelector('.copyright');
-        if (!row) return false;
-
-        let stamp = Array.from(row.querySelectorAll('span')).find(function (el) {
-          return el.textContent.trim().startsWith('Last Updated on');
-        });
-
-        if (!stamp) {
-          stamp = document.createElement('span');
-          row.appendChild(stamp);
-        }
-
-        stamp.classList.add('csc-last-updated');
-        stamp.textContent = 'Last Updated on 6 September 2026 at 14:58:00Z';
-        return true;
-      }
-
-      if (!placeLastUpdated()) {
-        const observer = new MutationObserver(function () {
-          if (placeLastUpdated()) observer.disconnect();
-        });
-        observer.observe(footerHost, { childList: true, subtree: true });
-      }
-    })();
-  </script>
 </body>
 </html>
