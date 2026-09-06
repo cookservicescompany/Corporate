@@ -48,16 +48,22 @@
     .csc-acquisition-notice a:focus {
       color: #fff4f4;
     }
-    .csc-page-updated {
-      background: #061a33;
-      color: rgba(255,255,255,.68);
-      font-size: 12px;
+
+    /* Match the CSC homepage copyright row: copyright left, Last Updated right. */
+    #csc-site-footer .copyright {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    #csc-site-footer .copyright .csc-last-updated {
+      margin-left: auto;
       text-align: right;
-      padding: 12px 0 0;
+      white-space: nowrap;
     }
     @media (max-width: 760px) {
       .csc-acquisition-notice { font-size: 12px; padding: 7px 12px; }
-      .csc-page-updated { text-align: center; }
     }
   </style>
   <script type="application/ld+json">
@@ -325,9 +331,6 @@
     </section>
   </main>
 
-  <div class="csc-page-updated" aria-label="Page last updated">
-    <div class="csc-shell">Last Updated on 6 September 2026 at 14:58:00Z</div>
-  </div>
   <div id="csc-site-footer"></div>
   <script>
     function sendCSCContactMessage(event){
@@ -354,5 +357,36 @@
     }
   </script>
   <script src="/assets/csc-shell.js"></script>
+  <script>
+    (function () {
+      const footerHost = document.getElementById('csc-site-footer');
+      if (!footerHost) return;
+
+      function placeLastUpdated() {
+        const row = footerHost.querySelector('.copyright');
+        if (!row) return false;
+
+        let stamp = Array.from(row.querySelectorAll('span')).find(function (el) {
+          return el.textContent.trim().startsWith('Last Updated on');
+        });
+
+        if (!stamp) {
+          stamp = document.createElement('span');
+          row.appendChild(stamp);
+        }
+
+        stamp.classList.add('csc-last-updated');
+        stamp.textContent = 'Last Updated on 6 September 2026 at 14:58:00Z';
+        return true;
+      }
+
+      if (!placeLastUpdated()) {
+        const observer = new MutationObserver(function () {
+          if (placeLastUpdated()) observer.disconnect();
+        });
+        observer.observe(footerHost, { childList: true, subtree: true });
+      }
+    })();
+  </script>
 </body>
 </html>
