@@ -3,7 +3,7 @@
 <head>
   <!--
     CSC Corporate Homepage Build
-    Last Updated: 30 August 2026 @ 20:16:42Z UTC
+    Last Updated: 6 September 2026 @ 14:58:00Z UTC
     Copyright © 2026 Cook Services Company, LLC | All Rights Reserved.
   -->
   <meta charset="utf-8">
@@ -26,8 +26,40 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#061a33">
-  <meta name="build" content="CSC Corporate Homepage Build | 30 August 2026 @ 20:16:42Z UTC">
+  <meta name="build" content="CSC Corporate Homepage Build | 6 September 2026 @ 14:58:00Z UTC">
   <link rel="stylesheet" href="/assets/csc-style.css">
+  <style>
+    .csc-acquisition-notice {
+      background: #a31515;
+      color: #fff;
+      text-align: center;
+      padding: 7px 16px;
+      font-size: 13px;
+      line-height: 1.45;
+      font-weight: 700;
+    }
+    .csc-acquisition-notice a {
+      color: #fff;
+      font-weight: 900;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .csc-acquisition-notice a:hover,
+    .csc-acquisition-notice a:focus {
+      color: #fff4f4;
+    }
+    .csc-page-updated {
+      background: #061a33;
+      color: rgba(255,255,255,.68);
+      font-size: 12px;
+      text-align: right;
+      padding: 12px 0 0;
+    }
+    @media (max-width: 760px) {
+      .csc-acquisition-notice { font-size: 12px; padding: 7px 12px; }
+      .csc-page-updated { text-align: center; }
+    }
+  </style>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -55,6 +87,9 @@
   </script>
 </head>
 <body>
+  <div class="csc-acquisition-notice" role="status" aria-label="QuickHire acquisition notice">
+    <a href="https://quickhire.agency">QuickHire™</a> has been acquired by the Rothschild Group, LLC and is no longer operated by Cook Services Company, LLC. Please visit <a href="https://rothschildgroupllc.com/">their website</a> or <a href="mailto:info@rothschildgroupllc.com?subject=RE%3A%20QuickHire%E2%84%A2">e-mail them</a> for more information.
+  </div>
   <div id="csc-site-header"></div>
 
   <main class="csc-main" id="main">
@@ -290,6 +325,9 @@
     </section>
   </main>
 
+  <div class="csc-page-updated" aria-label="Page last updated">
+    <div class="csc-shell">Last Updated on 6 September 2026 at 14:58:00Z</div>
+  </div>
   <div id="csc-site-footer"></div>
   <script>
     function sendCSCContactMessage(event){
