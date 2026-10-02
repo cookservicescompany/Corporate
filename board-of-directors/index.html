@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Board of Directors | Cook Services Company, LLC</title>
+  <meta name="description" content="Meet the Board of Directors and executive leadership of Cook Services Company, LLC.">
+  <meta name="theme-color" content="#07172f">
+
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <style>
+    :root{
+      --csc-navy:#07172f;
+      --csc-navy-2:#102957;
+      --csc-gold:#c9972b;
+      --csc-silver:#8d9298;
+      --ink:#172033;
+      --muted:#687183;
+      --paper:#f6f8fb;
+      --white:#ffffff;
+      --line:#dfe4eb;
+      --shadow:0 18px 50px rgba(7,23,47,.12);
+      --radius:24px;
+      --shell:min(1160px, calc(100% - 40px));
+    }
+
+    *{box-sizing:border-box}
+
+    html{scroll-behavior:smooth}
+
+    body{
+      margin:0;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at 85% 5%, rgba(201,151,43,.10), transparent 25%),
+        linear-gradient(180deg,#fff 0%,#f7f8fb 45%,#f1f4f8 100%);
+      line-height:1.6;
+    }
+
+    img{max-width:100%}
+
+    .skip-link{
+      position:absolute;
+      left:-9999px;
+      top:auto;
+      width:1px;
+      height:1px;
+      overflow:hidden;
+    }
+    .skip-link:focus{
+      left:16px;
+      top:16px;
+      width:auto;
+      height:auto;
+      padding:10px 14px;
+      background:#fff;
+      color:var(--csc-navy);
+      z-index:1000;
+      border-radius:10px;
+      box-shadow:var(--shadow);
+    }
+
+    .acquisition-notice{
+      background:#04101f;
+      color:rgba(255,255,255,.82);
+      text-align:center;
+      padding:8px 18px;
+      font-size:12px;
+      line-height:1.45;
+    }
+    .acquisition-notice a{color:#fff;font-weight:800}
+
+    .shell{width:var(--shell);margin-inline:auto}
+
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background:rgba(255,255,255,.94);
+      backdrop-filter:blur(16px);
+      border-bottom:1px solid rgba(7,23,47,.08);
+    }
+
+    .topbar-inner{
+      min-height:86px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      text-decoration:none;
+      color:var(--csc-navy);
+      min-width:0;
+    }
+
+    .brand-logo{
+      width:62px;
+      height:62px;
+      object-fit:contain;
+      border-radius:14px;
+      flex:0 0 auto;
+    }
+
+    .brand-name{
+      font-weight:950;
+      letter-spacing:-.02em;
+      font-size:18px;
+      white-space:nowrap;
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:flex-end;
+      flex-wrap:wrap;
+      gap:8px;
+    }
+
+    .nav a{
+      color:var(--csc-navy);
+      text-decoration:none;
+      font-size:13px;
+      font-weight:850;
+      padding:10px 13px;
+      border-radius:999px;
+      transition:.16s ease;
+    }
+
+    .nav a:hover,
+    .nav a[aria-current="page"]{
+      background:rgba(201,151,43,.16);
+      transform:translateY(-1px);
+    }
+
+    .nav .nav-cta{
+      color:#fff;
+      background:var(--csc-navy);
+      box-shadow:0 16px 34px rgba(7,23,47,.18);
+    }
+    .nav .nav-cta:hover{background:var(--csc-navy-2)}
+
+    .hero{
+      padding:82px 0 50px;
+      text-align:center;
+      position:relative;
+    }
+
+    .eyebrow{
+      margin:0 0 14px;
+      color:#846214;
+      font-size:12px;
+      font-weight:950;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+    }
+
+    h1{
+      margin:0 auto;
+      max-width:900px;
+      color:var(--csc-navy);
+      font-size:clamp(44px,7vw,78px);
+      line-height:.98;
+      letter-spacing:-.05em;
+    }
+
+    .hero p.lede{
+      max-width:760px;
+      margin:24px auto 0;
+      font-size:18px;
+      color:var(--muted);
+    }
+
+    .hero-rule{
+      width:94px;
+      height:4px;
+      margin:30px auto 0;
+      border-radius:999px;
+      background:linear-gradient(90deg,var(--csc-navy),var(--csc-gold));
+    }
+
+    .board-section{padding:22px 0 88px}
+
+    .board-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:26px;
+    }
+
+    .director-card{
+      background:rgba(255,255,255,.96);
+      border:1px solid rgba(7,23,47,.08);
+      border-radius:var(--radius);
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      display:flex;
+      flex-direction:column;
+      min-width:0;
+      transition:transform .2s ease, box-shadow .2s ease;
+    }
+
+    .director-card:hover{
+      transform:translateY(-4px);
+      box-shadow:0 26px 60px rgba(7,23,47,.16);
+    }
+
+    .portrait-wrap{
+      position:relative;
+      aspect-ratio:4 / 4.35;
+      overflow:hidden;
+      background:#e8ebef;
+    }
+
+    .portrait-wrap img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center top;
+      display:block;
+      transition:transform .35s ease;
+    }
+
+    .director-card:hover .portrait-wrap img{transform:scale(1.018)}
+
+    .portrait-wrap::after{
+      content:"";
+      position:absolute;
+      inset:auto 0 0;
+      height:30%;
+      background:linear-gradient(180deg,transparent,rgba(4,10,20,.32));
+      pointer-events:none;
+    }
+
+    .card-body{
+      padding:25px 25px 28px;
+      flex:1;
+      display:flex;
+      flex-direction:column;
+    }
+
+    .role{
+      margin:0 0 8px;
+      color:#846214;
+      font-size:11px;
+      font-weight:950;
+      letter-spacing:.13em;
+      text-transform:uppercase;
+    }
+
+    .director-card h2{
+      margin:0;
+      color:var(--csc-navy);
+      font-size:27px;
+      line-height:1.1;
+      letter-spacing:-.03em;
+    }
+
+    .bio{
+      margin:14px 0 0;
+      color:#566073;
+      font-size:14.5px;
+      line-height:1.72;
+    }
+
+    .leadership-note{
+      margin-top:36px;
+      padding:28px 30px;
+      background:linear-gradient(135deg,var(--csc-navy),#102957);
+      color:#fff;
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      display:grid;
+      grid-template-columns:minmax(0,1fr) auto;
+      gap:24px;
+      align-items:center;
+    }
+
+    .leadership-note h2{
+      margin:0 0 6px;
+      font-size:25px;
+      line-height:1.15;
+    }
+    .leadership-note p{
+      margin:0;
+      color:rgba(255,255,255,.72);
+      max-width:760px;
+    }
+    .leadership-note a{
+      text-decoration:none;
+      color:var(--csc-navy);
+      background:#fff;
+      font-weight:900;
+      padding:12px 17px;
+      border-radius:999px;
+      white-space:nowrap;
+    }
+
+    footer{
+      background:linear-gradient(135deg,#040a14,var(--csc-navy));
+      color:#fff;
+      padding:36px 0 28px;
+    }
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns:minmax(240px,1fr) minmax(240px,1.2fr) minmax(220px,.8fr);
+      gap:28px;
+      align-items:start;
+    }
+
+    .footer-brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
+
+    .footer-logo{
+      width:72px;
+      height:72px;
+      object-fit:contain;
+      border-radius:16px;
+      background:#fff;
+    }
+
+    .footer-title{font-weight:950;font-size:18px;line-height:1.12}
+    .footer-sub{
+      color:rgba(255,255,255,.68);
+      margin-top:7px;
+      font-size:13.5px;
+      line-height:1.45;
+      max-width:430px;
+    }
+
+    .footer-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px 16px;
+    }
+
+    .footer-links a,
+    .footer-contact a{
+      color:rgba(255,255,255,.84);
+      text-decoration:none;
+      font-weight:760;
+      font-size:14px;
+    }
+
+    .footer-links a:hover,
+    .footer-contact a:hover{
+      color:#fff;
+      text-decoration:underline;
+    }
+
+    .footer-contact{
+      color:rgba(255,255,255,.72);
+      line-height:1.7;
+      font-size:13px;
+    }
+
+    .copyright{
+      margin-top:28px;
+      padding-top:20px;
+      border-top:1px solid rgba(255,255,255,.14);
+      color:rgba(255,255,255,.62);
+      font-size:12px;
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+    }
+    .copyright a{color:inherit;text-decoration:none}
+    .copyright a:hover{color:#fff;text-decoration:underline}
+
+    @media(max-width:980px){
+      .board-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .footer-grid{grid-template-columns:1fr}
+      .topbar-inner{align-items:flex-start;padding:14px 0;flex-direction:column}
+      .nav{justify-content:flex-start}
+    }
+
+    @media(max-width:650px){
+      :root{--shell:min(100% - 22px,1160px)}
+      .acquisition-notice{font-size:11px}
+      .brand{width:100%;justify-content:center}
+      .brand-name{font-size:16px;white-space:normal}
+      .brand-logo{width:58px;height:58px}
+      .nav{justify-content:center;width:100%}
+      .nav a{font-size:12px;padding:9px 10px}
+      .hero{padding:56px 0 34px}
+      h1{font-size:clamp(42px,15vw,62px)}
+      .hero p.lede{font-size:16px}
+      .board-grid{grid-template-columns:1fr;gap:20px}
+      .portrait-wrap{aspect-ratio:4 / 4.1}
+      .leadership-note{grid-template-columns:1fr;text-align:left}
+      .leadership-note a{justify-self:start}
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"AboutPage",
+    "name":"Board of Directors | Cook Services Company, LLC",
+    "url":"https://corporate.cook-international.com/board-of-directors/",
+    "about":{
+      "@type":"Organization",
+      "name":"Cook Services Company, LLC",
+      "url":"https://corporate.cook-international.com/"
+    }
+  }
+  </script>
+</head>
+
+<body>
+  <div class="acquisition-notice" role="status" aria-label="QuickHire acquisition notice">
+    <a href="https://quickhire.agency">QuickHire™</a> has been acquired by the Rothschild Group, LLC and is no longer operated by Cook Services Company, LLC.
+    Please visit <a href="https://rothschildgroupllc.com/">their website</a> or
+    <a href="mailto:info@rothschildgroupllc.com?subject=RE%3A%20QuickHire%E2%84%A2">e-mail them</a> for more information.
+  </div>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="topbar" aria-label="Site header">
+    <div class="shell topbar-inner">
+      <a class="brand" href="/" aria-label="Cook Services Company home">
+        <img class="brand-logo" src="/CSCLogo01.png" alt="Cook Services Company logo">
+        <span class="brand-name">Cook Services Company, LLC</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="/">Corporate</a>
+        <a href="/board-of-directors/" aria-current="page">Board of Directors</a>
+        <a href="/investors/">Investors</a>
+        <a href="/terms/">Terms</a>
+        <a href="/privacy/">Privacy</a>
+        <a class="nav-cta" href="/#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="shell hero" aria-labelledby="page-title">
+      <p class="eyebrow">Corporate Leadership</p>
+      <h1 id="page-title">Board of Directors</h1>
+      <p class="lede">
+        Meet the leadership team guiding Cook Services Company, LLC through disciplined operations,
+        responsible growth, technology development, and long-term value creation.
+      </p>
+      <div class="hero-rule" aria-hidden="true"></div>
+    </section>
+
+    <section class="shell board-section" aria-label="Cook Services Company Board of Directors">
+      <div class="board-grid">
+
+        <article class="director-card">
+          <div class="portrait-wrap">
+            <img src="/MichaelACook.jpg" alt="Michael A. Cook" loading="eager">
+          </div>
+          <div class="card-body">
+            <p class="role">Chairman of the Board of Directors</p>
+            <h2>Michael A. Cook</h2>
+            <p class="bio">
+              Michael A. Cook serves as Chairman of the Board of Directors of Cook Services Company, LLC.
+              He graduated from Ball State University in 2017 and proudly served in the Indiana Army National Guard.
+              He attends St. Mary’s Church in Indianapolis with his family.
+            </p>
+          </div>
+        </article>
+
+        <article class="director-card">
+          <div class="portrait-wrap">
+            <img src="/MorganDelacroix.png" alt="Morgan Delacroix" loading="eager">
+          </div>
+          <div class="card-body">
+            <p class="role">Chief Executive Officer &amp; President</p>
+            <h2>Morgan Delacroix</h2>
+            <p class="bio">
+              Morgan Delacroix serves as Chief Executive Officer and President of Cook Services Company, LLC.
+              She attended Louisiana State University in Baton Rouge, Louisiana. Before joining CSC,
+              she served as General Counsel for Boudreaux &amp; Thibodeaux in New Orleans.
+            </p>
+          </div>
+        </article>
+
+        <article class="director-card">
+          <div class="portrait-wrap">
+            <img src="/01DonaldErickson.jpeg" alt="Donald P. Erickson" loading="eager">
+          </div>
+          <div class="card-body">
+            <p class="role">Chief Operating Officer</p>
+            <h2>Donald P. Erickson</h2>
+            <p class="bio">
+              Donald P. Erickson serves as Chief Operating Officer of Cook Services Company, LLC.
+              He previously served as Chief Operating Officer of QuickHire and attended Boston College.
+              He began his corporate career as a Senior Account Manager at Burlington Coat Factory.
+            </p>
+          </div>
+        </article>
+
+        <article class="director-card">
+          <div class="portrait-wrap">
+            <img src="/SophieKeller03.png" alt="Sophie Keller" loading="lazy">
+          </div>
+          <div class="card-body">
+            <p class="role">General Counsel</p>
+            <h2>Sophie Keller</h2>
+            <p class="bio">
+              Sophie Keller serves as General Counsel of Cook Services Company, LLC. She earned her J.D.
+              from the University of Chicago Law School in 2019 and previously practiced as an associate
+              at Kirkland &amp; Ellis. She lives in Carmel, Indiana with her family and attends Living Word
+              Bibles Church in Carmel.
+            </p>
+          </div>
+        </article>
+
+        <article class="director-card">
+          <div class="portrait-wrap">
+            <img src="/monica-steele.png" alt="Monica Steele" loading="lazy">
+          </div>
+          <div class="card-body">
+            <p class="role">Chief Financial Officer</p>
+            <h2>Monica Steele</h2>
+            <p class="bio">
+              Monica Steele serves as Chief Financial Officer of Cook Services Company, LLC. Originally
+              from Helena, Montana, she graduated from Montana State University in 2007 with a bachelor’s
+              degree in finance and later earned her Master of Business Administration from the Kellogg
+              School of Management.
+            </p>
+          </div>
+        </article>
+
+        <article class="director-card">
+          <div class="portrait-wrap">
+            <img src="/AlexWu.png" alt="Alex Wu" loading="lazy">
+          </div>
+          <div class="card-body">
+            <p class="role">Chief Technology Officer</p>
+            <h2>Alex Wu</h2>
+            <p class="bio">
+              Alex Wu serves as Chief Technology Officer of Cook Services Company, LLC, leading the
+              company’s technology strategy, systems development, and technical operations. He attended
+              the Massachusetts Institute of Technology (MIT) in Cambridge, Massachusetts.
+            </p>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="leadership-note">
+        <div>
+          <h2>Governance focused on long-term value.</h2>
+          <p>
+            CSC’s leadership brings together corporate operations, finance, law, technology, investment,
+            and entrepreneurial experience to support the company and its portfolio.
+          </p>
+        </div>
+        <a href="/#contact">Contact CSC</a>
+      </div>
+    </section>
+  </main>
+
+  <footer aria-label="Site footer">
+    <div class="shell">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img class="footer-logo" src="/CSCLogo01.png" alt="Cook Services Company logo" loading="lazy">
+          <div>
+            <div class="footer-title">Cook Services Company, LLC</div>
+            <div class="footer-sub">
+              Corporate gateway for CSC brands, ventures, technology services, publishing, and investor resources.
+            </div>
+          </div>
+        </div>
+
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/">Corporate</a>
+          <a href="/board-of-directors/">Board of Directors</a>
+          <a href="/investors/">CSC Investments</a>
+          <a href="https://cts.cook-international.com/">Cook Technology Services</a>
+          <a href="https://www.valoismedia.com/">Valois Media Holdings</a>
+          <a href="https://www.livingwordbibles.com/">Living Word Bibles</a>
+          <a href="/copyright/">Copyright</a>
+          <a href="/eeo/">Equal Employment Opportunity</a>
+          <a href="/terms/">Terms of Service</a>
+          <a href="/privacy/">Privacy Policy</a>
+        </nav>
+
+        <div class="footer-contact">
+          Market Square Center<br>
+          151 N. Delaware Street, Suite 122<br>
+          Indianapolis, IN 46204<br>
+          <a href="tel:+13174421437">(317) 442-1437</a><br>
+          <a href="mailto:cookservicescompany@gmail.com">cookservicescompany@gmail.com</a>
+        </div>
+      </div>
+
+      <div class="copyright">
+        <a href="/copyright/">Copyright © <span id="year">2026</span> Cook Services Company, LLC | All Rights Reserved.</a>
+        <span>Board of Directors</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
