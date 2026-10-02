@@ -1,6 +1,6 @@
 /*
   CSC Corporate Shared Shell
-  Last Updated: 6 September 2026 @ 14:58:00Z UTC
+  Last Updated: 2 October 2026 @ 10:58:19Z UTC
   Copyright © 2026 Cook Services Company, LLC | All Rights Reserved.
 */
 (function () {
@@ -48,6 +48,7 @@
           <nav class="csc-nav" id="csc-primary-nav" aria-label="Primary navigation">
             ${pageLink('https://www.cook-international.com/', 'Home')}
             ${pageLink('https://corporate.cook-international.com/', 'Corporate')}
+            ${pageLink('/board-of-directors/', 'People')}
             ${pageLink('/#portfolio', 'Portfolio')}
             ${pageLink('/investors/', 'Investors')}
             ${pageLink('/#contact', 'Contact')}
@@ -75,6 +76,7 @@
               </div>
             </div>
             <div class="csc-footer-links" aria-label="Footer links">
+              <a href="/board-of-directors/">People</a>
               <a href="/investors/">CSC Investments</a>
               <a href="https://www.livingwordbibles.com" target="_blank" rel="noopener">Living Word Bibles</a>
               <a href="https://www.cook-international.com/eeo/">Equal Employment Opportunity</a>
@@ -95,7 +97,7 @@
             <a class="csc-footer-copyright-link" href="https://www.cook-international.com/copyright/" aria-label="Cook Services Company copyright, trademark, and intellectual property notice">
               Copyright © ${year} Cook Services Company, LLC. All Rights Reserved.
             </a>
-            <span>Last Updated on 6 September 2026 at 14:58:00Z</span>
+            <span>Last Updated on 2 October 2026 at 10:58:19Z</span>
           </div>
         </div>
       </footer>

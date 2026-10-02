@@ -1,6 +1,6 @@
 /*
   CSC Corporate Shared Styles
-  Last Updated: 6 September 2026 @ 14:58:00Z UTC
+  Last Updated: 2 October 2026 @ 10:58:19Z UTC
   Copyright © 2026 Cook Services Company, LLC | All Rights Reserved.
 */
 :root {
@@ -1530,5 +1530,316 @@ img {
 
   .csc-brand-logo-box img {
     max-height: 170px;
+  }
+}
+
+
+/* =========================================================
+   CSC People / Board of Directors
+   Added 2 October 2026
+   ========================================================= */
+
+.csc-people-main {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 88% 8%, rgba(201, 151, 43, .20), transparent 30rem),
+    radial-gradient(circle at 8% 20%, rgba(29, 78, 216, .10), transparent 28rem);
+}
+
+.csc-people-main::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(7,23,47,.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(7,23,47,.025) 1px, transparent 1px);
+  background-size: 38px 38px;
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,.42), transparent 46%);
+}
+
+.csc-people-hero {
+  position: relative;
+  z-index: 1;
+  padding: 74px 0 46px;
+  text-align: center;
+}
+
+.csc-people-hero .csc-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.csc-people-hero .csc-eyebrow::before,
+.csc-people-hero .csc-eyebrow::after {
+  content: "";
+  width: 42px;
+  height: 1px;
+  background: rgba(138,101,21,.46);
+}
+
+.csc-people-title {
+  margin: 0 auto;
+  max-width: 920px;
+  color: var(--csc-navy);
+  font-size: clamp(52px, 8.2vw, 98px);
+  line-height: .90;
+  letter-spacing: -.075em;
+}
+
+.csc-people-lede {
+  max-width: 770px;
+  margin: 24px auto 0;
+  color: #435064;
+  font-size: clamp(17px, 2vw, 20px);
+  line-height: 1.72;
+}
+
+.csc-people-rule {
+  width: 104px;
+  height: 4px;
+  margin: 30px auto 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--csc-navy), var(--csc-gold));
+  box-shadow: 0 8px 20px rgba(201,151,43,.25);
+}
+
+.csc-people-section {
+  position: relative;
+  z-index: 1;
+  padding: 18px 0 88px;
+}
+
+.csc-people-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 26px;
+}
+
+.csc-person-card {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 30px;
+  background: rgba(255,255,255,.90);
+  border: 1px solid rgba(255,255,255,.74);
+  box-shadow: 0 22px 58px rgba(7,23,47,.12);
+  backdrop-filter: blur(14px);
+  transition:
+    transform .22s ease,
+    box-shadow .22s ease,
+    border-color .22s ease;
+}
+
+.csc-person-card:hover,
+.csc-person-card:focus-within {
+  transform: translateY(-7px);
+  box-shadow: 0 34px 82px rgba(7,23,47,.18);
+  border-color: rgba(201,151,43,.46);
+}
+
+.csc-person-photo {
+  position: relative;
+  aspect-ratio: 4 / 4.55;
+  overflow: hidden;
+  background:
+    linear-gradient(145deg, #e6e9ee, #f8fafc);
+}
+
+.csc-person-photo::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 34%;
+  background: linear-gradient(180deg, transparent, rgba(4,10,20,.42));
+  pointer-events: none;
+}
+
+.csc-person-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transform: scale(1.002);
+  transition: transform .36s ease, filter .36s ease;
+}
+
+.csc-person-card:hover .csc-person-photo img {
+  transform: scale(1.025);
+  filter: saturate(1.03) contrast(1.02);
+}
+
+.csc-person-index {
+  position: absolute;
+  right: 16px;
+  bottom: 14px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  color: #fff;
+  background: rgba(7,23,47,.72);
+  border: 1px solid rgba(255,255,255,.40);
+  backdrop-filter: blur(10px);
+  font-size: 11px;
+  font-weight: 950;
+  letter-spacing: .08em;
+}
+
+.csc-person-body {
+  position: relative;
+  padding: 26px 26px 30px;
+}
+
+.csc-person-body::before {
+  content: "";
+  position: absolute;
+  left: 26px;
+  top: 0;
+  width: 58px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--csc-gold), #f2d184);
+}
+
+.csc-person-role {
+  margin: 0 0 9px;
+  color: #8a6515;
+  font-size: 11px;
+  line-height: 1.4;
+  font-weight: 950;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+.csc-person-name {
+  margin: 0;
+  color: var(--csc-navy);
+  font-size: clamp(25px, 2.4vw, 31px);
+  line-height: 1.08;
+  letter-spacing: -.04em;
+}
+
+.csc-person-bio {
+  margin: 15px 0 0;
+  color: #526074;
+  font-size: 14.6px;
+  line-height: 1.72;
+}
+
+.csc-people-governance {
+  margin-top: 38px;
+  padding: clamp(28px, 4vw, 46px);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 28px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 32px;
+  color: #fff;
+  background:
+    radial-gradient(circle at 90% 14%, rgba(201,151,43,.34), transparent 20rem),
+    linear-gradient(135deg, #040a14, #0f2d58 72%, #133d76);
+  border: 1px solid rgba(201,151,43,.30);
+  box-shadow: 0 28px 72px rgba(7,23,47,.23);
+}
+
+.csc-people-governance::after {
+  content: "CSC";
+  position: absolute;
+  right: -8px;
+  bottom: -52px;
+  color: rgba(255,255,255,.045);
+  font-weight: 1000;
+  font-size: clamp(120px, 16vw, 220px);
+  line-height: 1;
+  letter-spacing: -.08em;
+  pointer-events: none;
+}
+
+.csc-people-governance-copy,
+.csc-people-governance-action {
+  position: relative;
+  z-index: 1;
+}
+
+.csc-people-governance h2 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(28px, 4vw, 44px);
+  letter-spacing: -.045em;
+  line-height: 1.02;
+}
+
+.csc-people-governance p {
+  max-width: 760px;
+  margin: 14px 0 0;
+  color: rgba(255,255,255,.78);
+  line-height: 1.72;
+}
+
+.csc-people-governance .csc-button-secondary {
+  background: #fff;
+  color: var(--csc-navy);
+  border-color: rgba(255,255,255,.8);
+  box-shadow: 0 14px 34px rgba(0,0,0,.18);
+  white-space: nowrap;
+}
+
+.csc-people-governance .csc-button-secondary:hover {
+  background: #fff8e8;
+}
+
+@media (max-width: 980px) {
+  .csc-people-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .csc-people-governance {
+    grid-template-columns: 1fr;
+  }
+
+  .csc-people-governance-action {
+    justify-self: start;
+  }
+}
+
+@media (max-width: 680px) {
+  .csc-people-hero {
+    padding: 52px 0 34px;
+  }
+
+  .csc-people-title {
+    font-size: clamp(50px, 17vw, 74px);
+  }
+
+  .csc-people-hero .csc-eyebrow::before,
+  .csc-people-hero .csc-eyebrow::after {
+    width: 26px;
+  }
+
+  .csc-people-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .csc-person-photo {
+    aspect-ratio: 4 / 4.25;
+  }
+
+  .csc-person-body {
+    padding: 24px 22px 27px;
+  }
+
+  .csc-person-body::before {
+    left: 22px;
   }
 }
