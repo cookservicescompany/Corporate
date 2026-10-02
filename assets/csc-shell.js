@@ -48,6 +48,7 @@
           <nav class="csc-nav" id="csc-primary-nav" aria-label="Primary navigation">
             ${pageLink('https://www.cook-international.com/', 'Home')}
             ${pageLink('https://corporate.cook-international.com/', 'Corporate')}
+            ${pageLink('/mergers-&-acquisitions/', 'Mergers & Acquisitions')}
             ${pageLink('/board-of-directors/', 'People')}
             ${pageLink('/#portfolio', 'Portfolio')}
             ${pageLink('/investors/', 'Investors')}
