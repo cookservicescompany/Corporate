@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Cook Services Company, LLC Mergers & Acquisitions — special situations, leveraged buyouts, strategic acquisitions, restructuring, and complex control transactions." />
+  <meta name="theme-color" content="#07182d" />
+  <title>Mergers &amp; Acquisitions | Cook Services Company, LLC</title>
+  <style>
+    :root {
+      --navy:#07182d;
+      --navy-2:#0b2747;
+      --navy-3:#123b69;
+      --gold:#c8a35b;
+      --gold-soft:#e0c98e;
+      --ink:#182231;
+      --muted:#667085;
+      --paper:#f7f8fa;
+      --line:rgba(7,24,45,.12);
+      --white:#fff;
+      --shadow:0 24px 70px rgba(7,24,45,.12);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      color:var(--ink);
+      background:#fff;
+      -webkit-font-smoothing:antialiased;
+    }
+    a{color:inherit}
+    img{display:block;max-width:100%}
+    .topline{height:4px;background:linear-gradient(90deg,var(--navy),var(--navy-3),var(--gold))}
+    .shell{width:min(1240px,calc(100% - 44px));margin:0 auto}
+
+    header{
+      background:rgba(255,255,255,.96);
+      border-bottom:1px solid var(--line);
+      position:sticky;top:0;z-index:50;
+      backdrop-filter:blur(14px);
+    }
+    .nav{
+      min-height:78px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:30px;
+    }
+    .brand{display:flex;align-items:center;gap:16px;text-decoration:none;min-width:0}
+    .brand img{width:90px;height:54px;object-fit:contain}
+    .brand-copy{color:var(--navy);font-weight:760;letter-spacing:.02em;line-height:1.05;white-space:nowrap}
+    .brand-copy small{display:block;margin-top:6px;color:#7d8795;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
+    nav ul{list-style:none;display:flex;align-items:center;gap:28px;margin:0;padding:0}
+    nav a{text-decoration:none;color:#536071;font-size:13px;font-weight:720;letter-spacing:.035em;transition:.2s ease}
+    nav a:hover,nav a.active{color:var(--navy)}
+    nav a.active{position:relative}
+    nav a.active:after{content:"";position:absolute;left:0;right:0;bottom:-13px;height:2px;background:var(--gold)}
+
+    .hero{background:var(--navy);overflow:hidden}
+    .hero img{width:100%;height:auto;max-height:710px;object-fit:cover;object-position:center}
+
+    .intro{padding:88px 0 78px;background:linear-gradient(180deg,#fff 0%,#f8fafc 100%)}
+    .eyebrow{color:var(--gold);font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;margin-bottom:16px}
+    .intro-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:72px;align-items:end}
+    h1,h2,h3,p{margin-top:0}
+    h1{font-family:Georgia,"Times New Roman",serif;color:var(--navy);font-size:clamp(44px,5.6vw,76px);line-height:1.02;letter-spacing:-.04em;margin-bottom:22px}
+    .lead{font-size:19px;line-height:1.8;color:#536071;max-width:760px;margin-bottom:0}
+    .intro-note{border-left:2px solid var(--gold);padding:3px 0 3px 26px;color:#485669;font-size:15px;line-height:1.8}
+
+    .pillars{padding:82px 0;background:#fff}
+    .section-head{max-width:800px;margin-bottom:40px}
+    .section-head h2{font-family:Georgia,"Times New Roman",serif;color:var(--navy);font-size:clamp(34px,4vw,54px);line-height:1.08;letter-spacing:-.035em;margin-bottom:16px}
+    .section-head p{color:var(--muted);font-size:17px;line-height:1.75;margin:0}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .card{padding:34px 30px;border:1px solid var(--line);border-radius:18px;background:#fff;box-shadow:0 14px 36px rgba(7,24,45,.05)}
+    .card-num{color:var(--gold);font-size:12px;font-weight:800;letter-spacing:.16em;margin-bottom:28px}
+    .card h3{color:var(--navy);font-size:21px;margin-bottom:12px}
+    .card p{color:var(--muted);line-height:1.7;font-size:15px;margin:0}
+
+    .feature{padding:0 0 92px;background:#fff}
+    .feature-grid{display:grid;grid-template-columns:1.04fr .96fr;min-height:590px;border-radius:24px;overflow:hidden;box-shadow:var(--shadow);background:var(--navy)}
+    .feature-media{min-height:560px;position:relative}
+    .feature-media img{width:100%;height:100%;object-fit:cover}
+    .feature-copy{display:flex;align-items:center;padding:64px;color:white;background:linear-gradient(140deg,#07182d,#0e3158)}
+    .feature-copy .inner{max-width:510px}
+    .feature-copy .eyebrow{margin-bottom:15px}
+    .feature-copy h2{font-family:Georgia,"Times New Roman",serif;font-size:clamp(36px,4.2vw,58px);line-height:1.08;letter-spacing:-.035em;margin-bottom:20px}
+    .feature-copy p{color:#c7d0dc;font-size:16px;line-height:1.8;margin-bottom:0}
+    .feature-copy .quote{margin-top:28px;padding-top:26px;border-top:1px solid rgba(255,255,255,.15);color:#fff;font-size:19px;font-family:Georgia,"Times New Roman",serif;line-height:1.55}
+
+    .focus{padding:92px 0;background:var(--paper)}
+    .focus-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:70px;align-items:center}
+    .focus-photo{border-radius:22px;overflow:hidden;box-shadow:var(--shadow);min-height:520px}
+    .focus-photo img{width:100%;height:100%;min-height:520px;object-fit:cover}
+    .focus-copy h2{font-family:Georgia,"Times New Roman",serif;color:var(--navy);font-size:clamp(38px,4.4vw,60px);line-height:1.05;letter-spacing:-.04em;margin-bottom:22px}
+    .focus-copy p{color:#596678;font-size:16px;line-height:1.8}
+    .criteria{display:grid;grid-template-columns:1fr 1fr;gap:14px 30px;margin-top:30px;padding-top:28px;border-top:1px solid var(--line)}
+    .criterion{display:flex;gap:12px;color:#334155;font-size:14px;line-height:1.5}
+    .criterion:before{content:"";width:7px;height:7px;flex:0 0 7px;margin-top:7px;border-radius:50%;background:var(--gold)}
+
+    .dark{padding:92px 0;background:linear-gradient(135deg,#061426,#0b294a);color:white}
+    .dark-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:72px;align-items:start}
+    .dark h2{font-family:Georgia,"Times New Roman",serif;font-size:clamp(38px,4.4vw,60px);line-height:1.06;letter-spacing:-.035em;margin-bottom:20px}
+    .dark p{color:#c5cfdb;line-height:1.8;font-size:16px}
+    .strategy-list{display:grid;gap:0;border-top:1px solid rgba(255,255,255,.13)}
+    .strategy{padding:24px 0;border-bottom:1px solid rgba(255,255,255,.13);display:grid;grid-template-columns:42px 1fr;gap:18px}
+    .strategy .n{color:var(--gold-soft);font-weight:800;font-size:12px;letter-spacing:.12em;padding-top:4px}
+    .strategy h3{font-size:17px;margin-bottom:7px}
+    .strategy p{font-size:14px;line-height:1.65;margin:0;color:#aeb9c7}
+
+    .cta{padding:82px 0;background:#fff}
+    .cta-box{border:1px solid var(--line);border-radius:24px;padding:58px 62px;display:flex;align-items:center;justify-content:space-between;gap:40px;background:linear-gradient(135deg,#fff,#f7f9fc);box-shadow:0 20px 55px rgba(7,24,45,.07)}
+    .cta h2{font-family:Georgia,"Times New Roman",serif;color:var(--navy);font-size:clamp(32px,3.8vw,48px);margin-bottom:10px;letter-spacing:-.03em}
+    .cta p{color:var(--muted);margin:0;line-height:1.65}
+    .button{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 24px;border-radius:9px;background:var(--navy);color:#fff;text-decoration:none;font-size:13px;font-weight:800;letter-spacing:.04em;white-space:nowrap;box-shadow:0 10px 26px rgba(7,24,45,.18);transition:.2s ease}
+    .button:hover{transform:translateY(-1px);background:#0b3159}
+
+    footer{background:#041120;color:#9eabb9;padding:34px 0;border-top:1px solid rgba(255,255,255,.07)}
+    .footer-row{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:12px}
+    .footer-row strong{color:#fff}
+    .footer-links{display:flex;gap:20px;flex-wrap:wrap}
+    .footer-links a{text-decoration:none;color:#bac5d0}
+    .footer-links a:hover{color:#fff}
+
+    @media (max-width:980px){
+      .intro-grid,.focus-grid,.dark-grid{grid-template-columns:1fr;gap:40px}
+      .cards{grid-template-columns:1fr 1fr}
+      .feature-grid{grid-template-columns:1fr}
+      .feature-media{min-height:430px}
+      .feature-copy{padding:50px 38px}
+      nav ul{gap:18px}
+      .brand-copy{display:none}
+    }
+    @media (max-width:720px){
+      .shell{width:min(100% - 28px,1240px)}
+      header{position:relative}
+      .nav{min-height:70px;align-items:flex-start;padding:12px 0;flex-direction:column;gap:8px}
+      nav{width:100%;overflow-x:auto;padding-bottom:5px}
+      nav ul{min-width:max-content;gap:18px}
+      nav a.active:after{bottom:-7px}
+      .hero img{min-height:310px;object-fit:cover}
+      .intro,.pillars,.focus,.dark,.cta{padding:62px 0}
+      .intro-grid{gap:28px}
+      .cards{grid-template-columns:1fr}
+      .feature{padding-bottom:64px}
+      .feature-media{min-height:330px}
+      .feature-copy{padding:40px 26px}
+      .focus-photo,.focus-photo img{min-height:360px}
+      .criteria{grid-template-columns:1fr}
+      .cta-box{padding:38px 26px;align-items:flex-start;flex-direction:column}
+      .footer-row{justify-content:center;text-align:center}
+      .footer-links{justify-content:center}
+    }
+  </style>
+</head>
+<body>
+  <div class="topline" aria-hidden="true"></div>
+  <header>
+    <div class="shell nav">
+      <a class="brand" href="https://corporate.cook-international.com/" aria-label="Cook Services Company corporate home">
+        <img src="https://corporate.cook-international.com/CSCLogo01.png" alt="Cook Services Company, LLC" />
+        <span class="brand-copy">Cook Services Company, LLC<small>Innovate • Build • Deliver</small></span>
+      </a>
+      <nav aria-label="Corporate navigation">
+        <ul>
+          <li><a href="https://corporate.cook-international.com/">Corporate</a></li>
+          <li><a href="https://corporate.cook-international.com/people/">People</a></li>
+          <li><a class="active" href="./">Mergers &amp; Acquisitions</a></li>
+          <li><a href="https://www.cook-international.com/">CSC Home</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-label="Mergers and Acquisitions">
+      <img src="Mergers&amp;Acquisitions.png" alt="Cook Services Company Mergers &amp; Acquisitions — Special Situations, Leveraged Buyouts, Strategic Acquisitions" />
+    </section>
+
+    <section class="intro">
+      <div class="shell intro-grid">
+        <div>
+          <div class="eyebrow">Mergers &amp; Acquisitions</div>
+          <h1>Decisive capital for complex opportunities.</h1>
+          <p class="lead">Cook Services Company pursues complex control transactions, strategic acquisitions, and special-situations opportunities involving businesses undergoing financial, operational, ownership, or governance pressure.</p>
+        </div>
+        <div class="intro-note">
+          We focus on situations where conventional buyers may be unwilling or unable to act — identifying enterprises with impaired capital structures, underutilized assets, ownership dislocation, management challenges, or unrealized strategic value.
+        </div>
+      </div>
+    </section>
+
+    <section class="pillars">
+      <div class="shell">
+        <div class="section-head">
+          <div class="eyebrow">Our Approach</div>
+          <h2>Control. Capital. Transformation.</h2>
+          <p>CSC evaluates opportunities to acquire, recapitalize, restructure, reposition, or consolidate businesses through disciplined transaction structures and hands-on ownership.</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <div class="card-num">01 / SPECIAL SITUATIONS</div>
+            <h3>Distressed &amp; Complex Opportunities</h3>
+            <p>Businesses experiencing financial distress, ownership instability, succession challenges, capital constraints, or operational underperformance can create compelling control opportunities.</p>
+          </article>
+          <article class="card">
+            <div class="card-num">02 / LEVERAGED ACQUISITIONS</div>
+            <h3>Leveraged Buyouts</h3>
+            <p>Where appropriate, acquisitions may combine sponsor capital, transaction financing, acquired-company cash flow, and other lawful financing sources to support an efficient transfer of control.</p>
+          </article>
+          <article class="card">
+            <div class="card-num">03 / CONTROL TRANSACTIONS</div>
+            <h3>Contested &amp; Unsolicited Opportunities</h3>
+            <p>Not every transaction begins through a traditional sale process. CSC evaluates lawful negotiated and contested pathways to corporate control where strategic conviction warrants action.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="feature">
+      <div class="shell">
+        <div class="feature-grid">
+          <div class="feature-media">
+            <img src="marketsquarecenter.jpeg" alt="Market Square Center, Indianapolis" />
+          </div>
+          <div class="feature-copy">
+            <div class="inner">
+              <div class="eyebrow">Indianapolis • Corporate Headquarters</div>
+              <h2>Built to move when opportunity appears.</h2>
+              <p>Our M&amp;A practice is designed around decisive evaluation, disciplined underwriting, and practical execution. We look beyond conventional transaction screens to understand ownership dynamics, capital structure, operating performance, brand value, and the potential for strategic transformation.</p>
+              <div class="quote">“Not every opportunity comes to market. Some require initiative, conviction, and the ability to navigate complexity.”</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="focus">
+      <div class="shell focus-grid">
+        <div class="focus-copy">
+          <div class="eyebrow">Acquisition Focus</div>
+          <h2>We look for businesses where ownership can unlock value.</h2>
+          <p>CSC seeks situations in which a change in ownership, capitalization, governance, or operating strategy may materially improve the enterprise. Our interest can extend from negotiated acquisitions and asset purchases to recapitalizations, carve-outs, restructurings, and other control-oriented transactions.</p>
+          <div class="criteria" aria-label="Acquisition criteria">
+            <div class="criterion">Underperforming or distressed businesses</div>
+            <div class="criterion">Founder or ownership succession situations</div>
+            <div class="criterion">Operationally constrained companies</div>
+            <div class="criterion">Strategic assets with unrealized value</div>
+            <div class="criterion">Corporate carve-outs and divestitures</div>
+            <div class="criterion">Complex or contested ownership situations</div>
+          </div>
+        </div>
+        <div class="focus-photo">
+          <img src="ctschicago.jpg" alt="Chicago skyline and Cook Technology Services market presence" />
+        </div>
+      </div>
+    </section>
+
+    <section class="dark">
+      <div class="shell dark-grid">
+        <div>
+          <div class="eyebrow">Transaction Capabilities</div>
+          <h2>Flexible structures. Disciplined execution.</h2>
+          <p>Every transaction is different. CSC evaluates the structure that best fits the business, its stakeholders, and the strategic objective, subject to applicable law, financing conditions, diligence, and definitive documentation.</p>
+        </div>
+        <div class="strategy-list">
+          <div class="strategy"><div class="n">01</div><div><h3>Negotiated Acquisitions</h3><p>Privately negotiated purchases of companies, controlling interests, divisions, assets, brands, or intellectual property.</p></div></div>
+          <div class="strategy"><div class="n">02</div><div><h3>Leveraged Buyouts</h3><p>Control transactions structured with a disciplined combination of equity capital and acquisition financing.</p></div></div>
+          <div class="strategy"><div class="n">03</div><div><h3>Recapitalizations &amp; Restructurings</h3><p>Transactions designed to reposition ownership, liabilities, governance, or capital structure around a stronger operating platform.</p></div></div>
+          <div class="strategy"><div class="n">04</div><div><h3>Contested Control Strategies</h3><p>Evaluation of unsolicited proposals and other lawful methods of pursuing or influencing corporate control where appropriate.</p></div></div>
+          <div class="strategy"><div class="n">05</div><div><h3>Carve-Outs &amp; Asset Acquisitions</h3><p>Selective acquisitions of operations, portfolios, intellectual property, digital properties, or other strategic assets.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="shell">
+        <div class="cta-box">
+          <div>
+            <div class="eyebrow">Confidential Opportunities</div>
+            <h2>Have a transaction to discuss?</h2>
+            <p>Business owners, advisors, creditors, stakeholders, and counterparties may contact Cook Services Company regarding acquisition and special-situations opportunities.</p>
+          </div>
+          <a class="button" href="mailto:cookservicescompany@gmail.com?subject=Mergers%20%26%20Acquisitions%20Inquiry">Contact M&amp;A</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-row">
+      <div>© 2026 <strong>Cook Services Company, LLC</strong>. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="https://corporate.cook-international.com/">Corporate</a>
+        <a href="https://corporate.cook-international.com/people/">People</a>
+        <a href="https://corporate.cook-international.com/eeo/">EEO</a>
+        <a href="https://corporate.cook-international.com/copyright/">Copyright</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
